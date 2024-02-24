@@ -6,8 +6,9 @@ class HebHTR:
 
     def __init__(self, img_path):
         self.img_path = img_path
-        self.original_img = cv2.imread(img_path)
+        self.original_img = cv2.cvtColor(cv2.imread(img_path), cv2.COLOR_BGR2GRAY)
 
+    
 
     def imgToWord(self, iterations=5, decoder_type='word_beam'):
         transcribed_words = []
